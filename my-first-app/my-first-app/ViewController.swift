@@ -34,12 +34,19 @@ class ViewController: UIViewController {
         if(setBackground) {
             setBackground = false
             current.text = "Text"
-            current.textColor = textcolor
-            desc.textColor = textcolor
+            
+            desc.textColor = UIColor(red: CGFloat(redView.value),
+                                     green: CGFloat(greView.value),
+                                     blue: CGFloat(bluView.value),
+                                     alpha: 1)
+            current.textColor = UIColor(red: CGFloat(redView.value),
+                                        green: CGFloat(greView.value),
+                                        blue: CGFloat(bluView.value),
+                                        alpha: 1)
         } else {
             setBackground = true
             current.text = "Background"
-            self.view.backgroundColor = background
+            self.view.backgroundColor = UIColor(red:CGFloat(redView.value), green:CGFloat(greView.value), blue:CGFloat(bluView.value), alpha:1.0)
         }
         
         
@@ -60,7 +67,10 @@ class ViewController: UIViewController {
         bluView.setValue(0.0, animated: true)
         greView.setValue(0.0, animated: true)
         textInput.text = ""
+        tglBtn.setOn(true, animated: true)
         desc.text = "Sample Text"
+        current.text = "Text"
+        setBackground = false
         current.textColor = UIColor(red:0.0, green:0.0, blue:0.00, alpha:1.0)
         self.view.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
         desc.textColor = UIColor(red:0.0, green:0.0, blue:0.00, alpha:1.0)
@@ -69,10 +79,6 @@ class ViewController: UIViewController {
     @IBAction func redSlider(_ sender: AnyObject) {
         if(setBackground) {
             self.view.backgroundColor = UIColor(red:CGFloat(redView.value), green:CGFloat(greView.value), blue:CGFloat(bluView.value), alpha:1.0)
-            background = UIColor(red: CGFloat(redView.value),
-                                 green: CGFloat(greView.value),
-                                 blue: CGFloat(bluView.value),
-                                 alpha: 1)
         } else {
             desc.textColor = UIColor(red: CGFloat(redView.value),
                                      green: CGFloat(greView.value),
@@ -82,19 +88,11 @@ class ViewController: UIViewController {
                                        green: CGFloat(greView.value),
                                        blue: CGFloat(bluView.value),
                                        alpha: 1)
-            textcolor = UIColor(red: CGFloat(redView.value),
-                                green: CGFloat(greView.value),
-                                blue: CGFloat(bluView.value),
-                                alpha: 1)
         }
     }
     @IBAction func blueSlider(_ sender: AnyObject) {
         if(setBackground) {
             self.view.backgroundColor = UIColor(red:CGFloat(redView.value), green:CGFloat(greView.value), blue:CGFloat(bluView.value), alpha:1.0)
-            background = UIColor(red: CGFloat(redView.value),
-                                 green: CGFloat(greView.value),
-                                 blue: CGFloat(bluView.value),
-                                 alpha: 1)
         } else {
             desc.textColor = UIColor(red: CGFloat(redView.value),
                                      green: CGFloat(greView.value),
@@ -104,19 +102,11 @@ class ViewController: UIViewController {
                                         green: CGFloat(greView.value),
                                         blue: CGFloat(bluView.value),
                                         alpha: 1)
-            textcolor = UIColor(red: CGFloat(redView.value),
-                                green: CGFloat(greView.value),
-                                blue: CGFloat(bluView.value),
-                                alpha: 1)
         }
     }
     @IBAction func greSlider(_ sender: AnyObject) {
         if(setBackground) {
             self.view.backgroundColor = UIColor(red:CGFloat(redView.value), green:CGFloat(greView.value), blue:CGFloat(bluView.value), alpha:1.0)
-            background = UIColor(red: CGFloat(redView.value),
-                                 green: CGFloat(greView.value),
-                                 blue: CGFloat(bluView.value),
-                                 alpha: 1)
         } else {
             desc.textColor = UIColor(red: CGFloat(redView.value),
                                      green: CGFloat(greView.value),
